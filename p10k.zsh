@@ -218,6 +218,9 @@
   # No surrounding whitespace.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_{LEFT,RIGHT}_WHITESPACE=
 
+
+  typeset -g POWERLEVEL9K_TERM_SHELL_INTEGRATION=true
+
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
   typeset -g POWERLEVEL9K_DIR_BACKGROUND=4

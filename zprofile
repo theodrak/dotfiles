@@ -5,3 +5,5 @@ eval "$(/opt/homebrew/bin/brew shellenv 2> /dev/null)"
 type -a pyenv > /dev/null && eval "$(pyenv init --path)"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export AGENT_RUNNER="$HOME/bin/run_cmd"
