@@ -65,7 +65,7 @@
   rebase = false
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [user]
 	email = theo@gemjungle.com
