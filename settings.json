@@ -208,4 +208,64 @@
     "html.erb": "html"
   },
   "editor.formatOnSave": true
+      },
+    "accessibility.dimUnfocused.enabled": true,
+    "accessibility.dimUnfocused.opacity": 1,
+    "bootstrapIntelliSense": {
+      "enable": true,
+      "bsVersion": "5.3.3",
+      "useLocalFile": false,
+      "cssFilePath": "",
+      "languageSupport": []
+    },
+    "diffEditor.ignoreTrimWhitespace": true,
+    "chat.agent.enabled": true,
+    "tailwind-fold.foldStyle": "QUOTES",
+    "tailwind-fold.unfoldIfLineSelected": true,
+    "tailwind-fold-rails.foldStyle": "QUOTES",
+    "tailwind-fold-rails.unfoldIfLineSelected": true,
+    "tailwind-fold.autoFold": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.sideBar.location": "right",
+    "tailwind-fold-rails.autoFold": true,
+    "parallels-desktop.devops-service.path": "/Users/theodrak/.parallels-desktop-vscode/tools/prldevops"
+  "editor.formatOnSave": true,
+  "terminal.integrated.fontFamily": "MesloLGL Nerd Font Mono",
+  "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l", "-i"]
+    },
+    "fish": {
+      "path": "fish",
+      "args": ["-l"]
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.env.osx": {
+    "LANG": "en_US.UTF-8",
+    "AGENT_RUNNER": "/Users/theodrak/bin/run_cmd"
+  },
+  "terminal.integrated.commandsToSkipShell": ["canvas"],
+  "terminal.integrated.gpuAcceleration": "off",
+  "chat.tools.terminal.autoApprove": {
+    "bin/rails": true,
+    "j": true,
+    "[j.id,": true,
+    "~/bin/run_cmd": true
+  }
 }
