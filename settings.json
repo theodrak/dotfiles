@@ -73,7 +73,6 @@
   "telemetry.telemetryLevel": "off",
   "window.restoreWindows": "none",
   "window.newWindowDimensions": "maximized",
-  "workbench.editor.enablePreview": true,
   "workbench.iconTheme": "vscode-great-icons",
   "workbench.settings.editor": "json",
   "workbench.settings.openDefaultSettings": true,
@@ -95,7 +94,10 @@
   "[erb]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp"
   },
-  "workbench.settings.applyToAllProfiles": ["rubyLsp.formatter"],
+  "workbench.settings.applyToAllProfiles": [
+    "rubyLsp.formatter",
+    "chat.tools.terminal.autoApprove"
+  ],
   "rubyLsp.rubyVersionManager": {
     "miseExecutablePath": "",
     "identifier": "mise"
@@ -112,33 +114,35 @@
   "github.copilot.advanced": {
     "authProvider": "github"
   },
-  "workbench.colorTheme": "Pine Theme Blue",
+  "workbench.colorTheme": "Spinel",
   "workbench.colorCustomizations": {
-    "activityBar.background": "#1A1B26",
-    "activityBar.foreground": "#ff7802",
-    "activityBarBadge.background": "#e5a064",
-    "activityBarBadge.foreground": "#1A1B26",
-    "editor.background": "#1A1B26",
-    "editor.foreground": "#c0caf5",
-    "editorLineNumber.activeForeground": "#c0caf5",
-    "editorLineNumber.foreground": "#565f89",
-    // "window.titleBarStyle": "custom",
-    // "window.activeBorder": "#FFFFFF",
-    // "window.inactiveBorder": "#FFFFFF",
-    // "window.activeForeground": "#c0caf5",
-    "selection.background": "#FFFFFF",
-    // "editor.focusBorder": "#7aa2f7",
-    // "tab.activeForeground": "#c0caf5",
-    "tab.activeBackground": "#f0f0f4",
-    "tab.activeBorder": "#ff7802",
-    "tab.border": "#4e5264",
-    // "tab.unfocusedInactiveModifiedBorder": "#ffffff",
-    "editorGroup.border": "#4e5264",
-    "tab.unfocusedActiveBackground": "#353647",
-    "gitDecoration.modifiedResourceForeground": "#ff7802"
-    // "editorOverviewRuler.modifiedForeground": "#ff7802",
-    // "editorOverviewRuler.addedForeground": "#ff7802",
-    // "editorGutter.modifiedBackground": "#ff7802",
+    "[Tokyo Night Moon 2]": {
+      "activityBar.background": "#232532",
+      "activityBar.foreground": "#ff7802",
+      "activityBarBadge.background": "#e5a064",
+      "activityBarBadge.foreground": "#1A1B26",
+      "editor.background": "#1A1B26",
+      "editor.foreground": "#c0caf5",
+      "editorLineNumber.activeForeground": "#c0caf5",
+      "editorLineNumber.foreground": "#565f89",
+      // "window.titleBarStyle": "custom",
+      // "window.activeBorder": "#FFFFFF",
+      // "window.inactiveBorder": "#FFFFFF",
+      // "window.activeForeground": "#c0caf5",
+      "selection.background": "#FFFFFF",
+      // "editor.focusBorder": "#7aa2f7",
+      // "tab.activeForeground": "#c0caf5",
+      "tab.activeBackground": "#f0f0f4",
+      "tab.activeBorder": "#ff7802",
+      "tab.border": "#4e5264",
+      // "tab.unfocusedInactiveModifiedBorder": "#ffffff",
+      "editorGroup.border": "#4e5264",
+      "tab.unfocusedActiveBackground": "#353647",
+      "gitDecoration.modifiedResourceForeground": "#ff7802"
+      // "editorOverviewRuler.modifiedForeground": "#ff7802",
+      // "editorOverviewRuler.addedForeground": "#ff7802",
+      // "editorGutter.modifiedBackground": "#ff7802",
+    }
   },
   "accessibility.dimUnfocused.enabled": true,
   "accessibility.dimUnfocused.opacity": 1,
@@ -149,7 +153,7 @@
     "cssFilePath": "",
     "languageSupport": []
   },
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   "chat.agent.enabled": true,
   "tailwind-fold.foldStyle": "QUOTES",
   "tailwind-fold.unfoldIfLineSelected": true,
@@ -196,6 +200,8 @@
   "continue.enableConsole": true,
   "continue.enableQuickActions": true,
   "github.copilot.chat.localeOverride": "en",
+  "languageServerHerb.formatter.enabled": true,
+  "languageServerHerb.linter.enabled": true,
   "languageServerHerb.linter.excludedRules": [
     "parser-no-errors",
     "html-tag-name-lowercase"
@@ -207,28 +213,27 @@
   "tailwindCSS.includeLanguages": {
     "html.erb": "html"
   },
-  "editor.formatOnSave": true
-      },
-    "accessibility.dimUnfocused.enabled": true,
-    "accessibility.dimUnfocused.opacity": 1,
-    "bootstrapIntelliSense": {
-      "enable": true,
-      "bsVersion": "5.3.3",
-      "useLocalFile": false,
-      "cssFilePath": "",
-      "languageSupport": []
-    },
-    "diffEditor.ignoreTrimWhitespace": true,
-    "chat.agent.enabled": true,
-    "tailwind-fold.foldStyle": "QUOTES",
-    "tailwind-fold.unfoldIfLineSelected": true,
-    "tailwind-fold-rails.foldStyle": "QUOTES",
-    "tailwind-fold-rails.unfoldIfLineSelected": true,
-    "tailwind-fold.autoFold": false,
-    "github.copilot.nextEditSuggestions.enabled": true,
-    "workbench.sideBar.location": "right",
-    "tailwind-fold-rails.autoFold": true,
-    "parallels-desktop.devops-service.path": "/Users/theodrak/.parallels-desktop-vscode/tools/prldevops"
+  "editor.formatOnSave": true,
+  "accessibility.dimUnfocused.enabled": true,
+  "accessibility.dimUnfocused.opacity": 1,
+  "bootstrapIntelliSense": {
+    "enable": true,
+    "bsVersion": "5.3.3",
+    "useLocalFile": false,
+    "cssFilePath": "",
+    "languageSupport": []
+  },
+  "diffEditor.ignoreTrimWhitespace": true,
+  "chat.agent.enabled": true,
+  "tailwind-fold.foldStyle": "QUOTES",
+  "tailwind-fold.unfoldIfLineSelected": true,
+  "tailwind-fold-rails.foldStyle": "QUOTES",
+  "tailwind-fold-rails.unfoldIfLineSelected": true,
+  "tailwind-fold.autoFold": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.sideBar.location": "right",
+  "tailwind-fold-rails.autoFold": true,
+  "parallels-desktop.devops-service.path": "/Users/theodrak/.parallels-desktop-vscode/tools/prldevops",
   "editor.formatOnSave": true,
   "terminal.integrated.fontFamily": "MesloLGL Nerd Font Mono",
   "terminal.integrated.fontLigatures.enabled": true,
@@ -262,10 +267,36 @@
   },
   "terminal.integrated.commandsToSkipShell": ["canvas"],
   "terminal.integrated.gpuAcceleration": "off",
+  "yaml.schemas": {
+    "file:///Users/theodrak/.vscode/extensions/continue.continue-1.2.11-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  },
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "chat.agent.maxRequests": 100,
+  "sqltools.useNodeRuntime": true,
   "chat.tools.terminal.autoApprove": {
+    "COVERAGE=1 bin/rails test": true,
     "bin/rails": true,
-    "j": true,
-    "[j.id,": true,
-    "~/bin/run_cmd": true
-  }
+    "bundle": true,
+    "herb-format": true,
+    "'PY'": true,
+    "len(lines)": true,
+    "lineno}:": true,
+    "code.rstrip()}')": true,
+    "bin/prepush": true,
+    "bin/brakeman": true
+  },
+  "workbench.preferredLightColorTheme": "GitHub Light",
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "Tokyo Night Moon",
+  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+  "continue.showInlineTip": false,
+  "diffEditor.renderSideBySide": true,
+  "githubPullRequests.pushBranch": "always",
+  "glassit.alpha": 255,
+  "githubIssues.issueBranchTitle": "uat/issue${issueNumber}",
+  "workbench.experimental.share.enabled": true
 }

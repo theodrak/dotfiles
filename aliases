@@ -12,7 +12,7 @@ alias stt="echo 'Launching VS Code instead of Sublime Text... (cf ~/.aliases)' &
 
 # Theos Aliases
 # Terminal aliases
-alias la="ls -a"
+alias la="ls -al"
 alias cl="clear"
 alias al="nvim /Users/theodrak/.aliases"
 

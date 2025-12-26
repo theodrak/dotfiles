@@ -24,5 +24,13 @@
     "key": "shift+alt+f",
     "command": "-editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "ctrl+cmd+l",
+    "command": "continue.focusContinueInput"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-continue.focusContinueInput"
   }
 ]
