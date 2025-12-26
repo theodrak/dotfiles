@@ -140,3 +140,11 @@ bindkey '^[[B' history-search-forward
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# Load local environment variables (API keys, secrets, etc.)
+# Create ~/.env.local and add your secrets there
+[[ -f ~/.env.local ]] && source ~/.env.local
+
+# Load local environment variables (API keys, secrets, etc.)
+# Create ~/.env.local and add your secrets there
+[[ -f ~/.env.local ]] && source ~/.env.local
