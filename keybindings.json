@@ -1,36 +1,26 @@
 // Place your key bindings in this file to override the defaults
 [
   {
-    "key": "ctrl+shift+v",
-    "command": "pasteAndIndent.action",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "cmd+shift+v",
-    "command": "pasteAndIndent.action",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
     "key": "ctrl+shift+cmd+f",
     "command": "-workbench.action.toggleZenMode",
-    "when": "!isAuxiliaryWindowFocusedContext"
+    "when": "!isAuxiliaryWindowFocusedContext",
   },
   {
     "key": "ctrl+shift+cmd+f",
     "command": "editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor",
   },
   {
     "key": "shift+alt+f",
     "command": "-editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor",
   },
   {
     "key": "ctrl+cmd+l",
-    "command": "continue.focusContinueInput"
+    "command": "continue.focusContinueInput",
   },
   {
     "key": "cmd+l",
-    "command": "-continue.focusContinueInput"
-  }
+    "command": "-continue.focusContinueInput",
+  },
 ]

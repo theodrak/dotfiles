@@ -1,0 +1,9 @@
+# Secrets
+.env*
+
+# macOS
+.DS_Store
+
+# Build sources
+tmux-*/
+tmux-*.tar.gz

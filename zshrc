@@ -5,8 +5,10 @@ export HOMEBREW_NO_ANALYTICS=1
 ZSH_DISABLE_COMPFIX=true
 
 # PATH entries user wants for scripts/CI (keep before guard if you need them available for non-interactive runs)
-export PATH="$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.rbenv/bin:./bin:./node_modules/.bin:$PATH:/usr/local/sbin"
-
+#export PATH="$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.rbenv/bin:./bin:./node_modules/.bin:$PATH:/usr/local/sbin"
+export PATH="$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:$PATH:/usr/local/sbin"
+# /etc/paths.d/dotnet-cli-tools adds a literal "~/.dotnet/tools", which no tool expands.
+path=("${(@)path/#\~\//$HOME/}")
 # Locale and editor envs for scripts
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -28,14 +30,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Load powerlevel10k theme (interactive only)
-if [[ -f "/opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme" ]]; then
-  source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-fi
-
 # Oh-My-Zsh setup (single definition)
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins (keep a single plugins=(...) block)
 plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search)
@@ -50,7 +47,7 @@ unalias rm 2>/dev/null || true
 unalias lt 2>/dev/null || true
 
 # rbenv, pyenv and other tools - load if present (interactive)
-type -a rbenv > /dev/null && eval "$(rbenv init -)"
+# type -a rbenv > /dev/null && eval "$(rbenv init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init - 2> /dev/null)" && RPROMPT+='[🐍 $(pyenv version-name)]'
 
@@ -148,3 +145,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Load local environment variables (API keys, secrets, etc.)
 # Create ~/.env.local and add your secrets there
 [[ -f ~/.env.local ]] && source ~/.env.local
+
+ export EDITOR="code --wait"
+
+

@@ -1,22 +1,28 @@
 # Lewagon Aliases
+
 # Get External IP / Internet Speed
+
 alias myip="curl https://ipinfo.io/json" # or /ip for plain-text ip
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
 # Quickly serve the current directory as HTTP
+
 alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
 
 # NOTE: On Q3 2021, Le Wagon decided to change the Web Dev curriculum default text editor
+
 alias stt="echo 'Launching VS Code instead of Sublime Text... (cf ~/.aliases)' && code ."
 
-
 # Theos Aliases
+
 # Terminal aliases
+
 alias la="ls -al"
 alias cl="clear"
 alias al="nvim /Users/theodrak/.aliases"
 
 # --- Le Wagon updates
+
 alias cdl="cd /Users/theodrak/code/theodrak/fullstack-challenges"
 alias cde="cd /Users/theodrak/code/theodrak/exercises"
 alias cdp="cd /Users/theodrak/code/theodrak/teamprojects/crypto-tracker"
@@ -27,6 +33,7 @@ alias cdr="cd ~/code/theodrak/rails-investigations"
 alias lwu="git pull upstream master -X ours"
 
 # --- Git Shortcuts
+
 alias gip="git push"
 alias gic="git commit -m"
 alias gis="git status"
@@ -38,11 +45,91 @@ alias giinit="git init -b main"
 alias lg="LazyGit"
 
 # ---- Eza (better ls) -----
+
 alias ls="eza --icons=always"
 
-
 # ---- Zoxide (better cd) ----
+
 eval "$(zoxide init zsh)"
 alias cd="z"
 
 alias rails="bin/rails"
+
+# ---- nginix Port rerouting ---
+
+alias ngstart="sudo /opt/homebrew/opt/nginx/bin/nginx"
+alias ngstop="sudo /opt/homebrew/opt/nginx/bin/nginx -s stop"
+alias ngedit="nvim /opt/homebrew/etc/nginx/servers/candleconfessional.conf"
+alias ngverify="sudo lsof -i :80"
+alias ngreload="sudo /opt/homebrew/opt/nginx/bin/nginx -s reload"
+
+# ---- LTS Discord bot (~/lts-bot, run as a launchd service) ----
+
+# Watches a Discord channel for Richard's LTS recording post and runs the
+
+# transcribe-video pipeline. Full docs: ~/lts-bot/README.md
+
+#
+
+# THE ONE RULE: only ever one copy running. The launchd copy and a manual
+
+# `python lts_bot.py` copy will BOTH pick up the same message, so the pipeline
+
+# fires twice, downloads the same video twice, and corrupts the file. `ltsstart`
+
+# and `ltsstop` below are written to make that impossible — use them rather than
+
+# calling launchctl/pkill by hand.
+
+# Start the bot via launchd (backgrounded, and auto-starts again on login).
+
+# Refuses if any copy is already running, so it can't create a second one.
+
+alias ltsstart="pgrep -f 'lts-bot/lts_bot.py' >/dev/null && echo 'lts-bot is already running — ltsstatus' || launchctl load ~/Library/LaunchAgents/com.theo.lts-bot.plist"
+
+# Stop the bot, whichever way it was started, then confirm it's actually dead.
+
+# Unloads launchd FIRST: the agent has KeepAlive=true, so a bare pkill would just
+
+# get the process respawned a second later.
+
+alias ltsstop="launchctl unload ~/Library/LaunchAgents/com.theo.lts-bot.plist 2>/dev/null; pkill -f 'lts-bot/lts_bot.py' 2>/dev/null; sleep 1; pgrep -fl 'lts-bot/lts_bot.py' || echo 'lts-bot stopped'"
+
+# Restart cleanly — use after editing .env or lts_bot.py, since the running
+
+# process holds the old config until it's actually restarted.
+
+alias ltsrestart="ltsstop; ltsstart"
+
+# Is it up? Prints the PID if a process is running, plus whether launchd has the
+
+# agent loaded. Two PIDs here = the double-instance bug; run ltsstop, then ltsstart.
+
+alias ltsstatus="pgrep -fl 'lts-bot/lts_bot.py' || echo 'lts-bot not running'; launchctl list | grep lts-bot || echo 'launchd agent not loaded'"
+
+# Follow the bot's own stdout/stderr (did it log in? did it see the message?).
+
+# For a live pipeline run instead, tail the per-run log: tail -f ~/lts-bot/logs/run-\*.log
+
+alias ltslogs="tail -f ~/lts-bot/logs/bot.out.log ~/lts-bot/logs/bot.err.log"
+
+# Jump to the bot's directory (.env, lts_bot.py, run_pipeline.sh, logs/).
+
+alias cdlts="cd ~/lts-bot"
+
+# ---- Metatrader 4 Folder shortcuts ----
+
+alias cdmt4dev="cd '/Users/theodrak/Google Drive/11. Personal (PSNL)/09. Training and Education (Edu)(PSNL)/Lepus Training/Development Scripts/MQL4'"
+alias cdmt4daytradelive="cd '/Volumes/[C] Windows 11/Users/theodrak/AppData/Roaming/MetaQuotes/Terminal/4032076105E40D96157CEB2F9A299998'"
+alias cdmt4daytradedemo="cd '/Volumes/[C] Windows 11/Users/theodrak/AppData/Roaming/MetaQuotes/Terminal/7FE8ADDAEECBE0575A50536D9F54006B'"
+alias cdmt4competition="cd '/Volumes/[C] Windows 11/Users/theodrak/AppData/Roaming/MetaQuotes/Terminal/3BE4428D11FCEA1E3BC8B318672BABA0'"
+alias cdmt4demo="cd '/Volumes/[C] Windows 11/Users/theodrak/AppData/Roaming/MetaQuotes/Terminal/50CA3DFB510CC5A8F28B48D1BF2A5702'"
+
+# ---- Candle Confessional VS Code Workspace ----
+
+alias codecc="open /Users/theodrak/code/theodrak/sass/candleconfessional.code-workspace"
+alias codetdbextension="open /Users/theodrak/Documents/TTC\ Code/ttc.code-workspace"
+
+# tmux
+
+alias t='tmux new -A -s everyday'

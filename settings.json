@@ -2,7 +2,7 @@
   "[python]": {
     "editor.bracketPairColorization.enabled": false,
     "editor.guides.bracketPairs": false,
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
   },
   "editor.bracketPairColorization.enabled": true,
   "editor.detectIndentation": false,
@@ -16,7 +16,7 @@
   "editor.snippetSuggestions": "top",
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
-    "erb": "html"
+    "erb": "html",
   },
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
@@ -39,7 +39,7 @@
     "log": true,
     "node_modules": true,
     "public/packs": true,
-    "tmp": true
+    "tmp": true,
   },
   "files.hotExit": "off",
   "files.insertFinalNewline": true,
@@ -51,7 +51,7 @@
     "**/log/**": true,
     "**/node_modules/**": true,
     "**/tmp/**": true,
-    "**/vendor/**": true
+    "**/vendor/**": true,
   },
   "notebook.diff.ignoreMetadata": true,
   "notebook.lineNumbers": "on",
@@ -64,16 +64,15 @@
   "python.linting.pylintEnabled": false,
   "python.terminal.activateEnvironment": false,
   "ruby.lint": {
-    "rubocop": true
+    "rubocop": true,
   },
   "search.exclude": {
     // Inherits all glob patterns from the `files.exclude` setting.
-    "**/.venv": true
+    "**/.venv": true,
   },
   "telemetry.telemetryLevel": "off",
   "window.restoreWindows": "none",
   "window.newWindowDimensions": "maximized",
-  "workbench.iconTheme": "vscode-great-icons",
   "workbench.settings.editor": "json",
   "workbench.settings.openDefaultSettings": true,
   "workbench.settings.useSplitJSON": true,
@@ -84,35 +83,37 @@
   "parallels-desktop.git.path": "/opt/homebrew/bin/git",
   "parallels-desktop.prlctl.path": "/usr/local/bin/prlctl",
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "git.openRepositoryInParentFolders": "always",
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "rubyLsp.linters": ["rubocop"],
   "[erb]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp"
+    "editor.defaultFormatter": "marcoroth.herb-lsp",
+    "editor.formatOnSave": true,
   },
   "workbench.settings.applyToAllProfiles": [
     "rubyLsp.formatter",
-    "chat.tools.terminal.autoApprove"
+    "chat.tools.terminal.autoApprove",
+    "markdown-image.local.path",
   ],
   "rubyLsp.rubyVersionManager": {
     "miseExecutablePath": "",
-    "identifier": "mise"
+    "identifier": "mise",
   },
   // All of these settings are scoped only to the Ruby language
   "[ruby]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp", // Use the Ruby LSP as the default formatter
-    "editor.formatOnSave": true, // Format files automatically when saving
-    "editor.tabSize": 2, // Use 2 spaces for indentation
-    "editor.insertSpaces": true, // Use spaces and not tabs for indentation
-    "editor.semanticHighlighting.enabled": true, // Enable semantic highlighting
-    "editor.formatOnType": true // Enable formatting while typing
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.semanticHighlighting.enabled": true,
   },
   "github.copilot.advanced": {
-    "authProvider": "github"
+    "authProvider": "github",
   },
   "workbench.colorTheme": "Spinel",
   "workbench.colorCustomizations": {
@@ -138,11 +139,11 @@
       // "tab.unfocusedInactiveModifiedBorder": "#ffffff",
       "editorGroup.border": "#4e5264",
       "tab.unfocusedActiveBackground": "#353647",
-      "gitDecoration.modifiedResourceForeground": "#ff7802"
+      "gitDecoration.modifiedResourceForeground": "#ff7802",
       // "editorOverviewRuler.modifiedForeground": "#ff7802",
       // "editorOverviewRuler.addedForeground": "#ff7802",
       // "editorGutter.modifiedBackground": "#ff7802",
-    }
+    },
   },
   "accessibility.dimUnfocused.enabled": true,
   "accessibility.dimUnfocused.opacity": 1,
@@ -151,29 +152,25 @@
     "bsVersion": "5.3.3",
     "useLocalFile": false,
     "cssFilePath": "",
-    "languageSupport": []
+    "languageSupport": [],
   },
-  "diffEditor.ignoreTrimWhitespace": false,
-  "chat.agent.enabled": true,
   "tailwind-fold.foldStyle": "QUOTES",
   "tailwind-fold.unfoldIfLineSelected": true,
-  "tailwind-fold-rails.foldStyle": "QUOTES",
   "tailwind-fold-rails.unfoldIfLineSelected": true,
-  "tailwind-fold.autoFold": false,
   "github.copilot.nextEditSuggestions.enabled": true,
-  "tailwind-fold-rails.autoFold": true,
   "parallels-desktop.devops-service.path": "/Users/theodrak/.parallels-desktop-vscode/tools/prldevops",
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
     "*.csv": "default",
     "*.xlsx": "default",
-    "*.sqlite3": "default"
+    "*.sqlite3": "default",
   },
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
+    "*.html.erb": "erb",
   },
   "editor.quickSuggestions": {
-    "strings": "on"
+    "strings": "on",
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "rubyLsp.enabledFeatures": {
@@ -194,9 +191,8 @@
     "definition": true,
     "workspaceSymbol": true,
     "signatureHelp": true,
-    "typeHierarchy": true
+    "typeHierarchy": true,
   },
-  "workbench.sideBar.location": "right",
   "continue.enableConsole": true,
   "continue.enableQuickActions": true,
   "github.copilot.chat.localeOverride": "en",
@@ -204,76 +200,82 @@
   "languageServerHerb.linter.enabled": true,
   "languageServerHerb.linter.excludedRules": [
     "parser-no-errors",
-    "html-tag-name-lowercase"
+    "html-tag-name-lowercase",
   ],
   "tailwindCSS.experimental.classRegex": [
     "\\bclass:\\s*'([^']*)'",
-    "\\bclass:\\s*\"([^\"]*)\""
+    "\\bclass:\\s*\"([^\"]*)\"",
   ],
   "tailwindCSS.includeLanguages": {
-    "html.erb": "html"
+    "html.erb": "html",
   },
   "editor.formatOnSave": true,
-  "accessibility.dimUnfocused.enabled": true,
-  "accessibility.dimUnfocused.opacity": 1,
-  "bootstrapIntelliSense": {
-    "enable": true,
-    "bsVersion": "5.3.3",
-    "useLocalFile": false,
-    "cssFilePath": "",
-    "languageSupport": []
-  },
-  "diffEditor.ignoreTrimWhitespace": true,
   "chat.agent.enabled": true,
-  "tailwind-fold.foldStyle": "QUOTES",
-  "tailwind-fold.unfoldIfLineSelected": true,
   "tailwind-fold-rails.foldStyle": "QUOTES",
-  "tailwind-fold-rails.unfoldIfLineSelected": true,
+
   "tailwind-fold.autoFold": false,
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "workbench.sideBar.location": "right",
   "tailwind-fold-rails.autoFold": true,
-  "parallels-desktop.devops-service.path": "/Users/theodrak/.parallels-desktop-vscode/tools/prldevops",
-  "editor.formatOnSave": true,
   "terminal.integrated.fontFamily": "MesloLGL Nerd Font Mono",
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.profiles.osx": {
     "bash": {
       "path": "bash",
       "args": ["-l"],
-      "icon": "terminal-bash"
+      "icon": "terminal-bash",
     },
     "zsh": {
       "path": "zsh",
-      "args": ["-l", "-i"]
+      "args": ["-l", "-i"],
     },
     "fish": {
       "path": "fish",
-      "args": ["-l"]
+      "args": ["-l"],
     },
     "tmux": {
       "path": "tmux",
-      "icon": "terminal-tmux"
+      "icon": "terminal-tmux",
     },
     "pwsh": {
       "path": "pwsh",
-      "icon": "terminal-powershell"
-    }
+      "icon": "terminal-powershell",
+    },
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.env.osx": {
     "LANG": "en_US.UTF-8",
-    "AGENT_RUNNER": "/Users/theodrak/bin/run_cmd"
+    "AGENT_RUNNER": "/Users/theodrak/bin/run_cmd",
   },
   "terminal.integrated.commandsToSkipShell": ["canvas"],
   "terminal.integrated.gpuAcceleration": "off",
   "yaml.schemas": {
-    "file:///Users/theodrak/.vscode/extensions/continue.continue-1.2.11-darwin-arm64/config-yaml-schema.json": [
-      ".continue/**/*.yaml"
-    ]
+    "file:///c%3A/Users/ProminetAdmin/.vscode/extensions/continue.continue-1.2.11-win32-x64/config-yaml-schema.json": [
+      ".continue/**/*.yaml",
+    ],
+    "file:///c%3A/Users/ProminetAdmin/.vscode/extensions/continue.continue-1.2.14-win32-x64/config-yaml-schema.json": [
+      ".continue/**/*.yaml",
+    ],
+    "file:///Users/theodrak/.vscode/extensions/continue.continue-1.2.14-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml",
+    ],
+    "file:///Users/theodrak/.vscode/extensions/continue.continue-1.2.15-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml",
+    ],
+    "file:///Users/theodrak/.vscode/extensions/continue.continue-1.2.16-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml",
+    ],
+    "file:///Users/theodrak/.vscode/extensions/continue.continue-1.2.17-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml",
+    ],
+    "file:///Users/theodrak/.vscode/extensions/continue.continue-1.2.22-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml",
+    ],
+    "file:///Users/theodrak/.vscode/extensions/continue.continue-1.2.24-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml",
+    ],
+    "file:///Users/theodrak/.vscode/extensions/continue.continue-2.0.0-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml",
+    ],
   },
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "chat.agent.maxRequests": 100,
   "sqltools.useNodeRuntime": true,
   "chat.tools.terminal.autoApprove": {
@@ -286,7 +288,19 @@
     "lineno}:": true,
     "code.rstrip()}')": true,
     "bin/prepush": true,
-    "bin/brakeman": true
+    "bin/brakeman": true,
+    "/^cd \"/Users/theodrak/Google Drive/00\\. Projects/Prominet/prominet-web\" && mise exec -- bin/rails test$/": {
+      "approve": true,
+      "matchCommandLine": true,
+    },
+    "/^cd \"/Users/theodrak/Google Drive/00\\. Projects/Prominet/prominet-web\" && mise exec -- bin/rails test:system$/": {
+      "approve": true,
+      "matchCommandLine": true,
+    },
+    "/^cd \"/Users/theodrak/Google Drive/00\\. Projects/Prominet/prominet-web\" && mise exec -- bin/rails test:system 2>&1 \\| head -100$/": {
+      "approve": true,
+      "matchCommandLine": true,
+    },
   },
   "workbench.preferredLightColorTheme": "GitHub Light",
   "window.autoDetectColorScheme": true,
@@ -298,5 +312,16 @@
   "githubPullRequests.pushBranch": "always",
   "glassit.alpha": 255,
   "githubIssues.issueBranchTitle": "uat/issue${issueNumber}",
-  "workbench.experimental.share.enabled": true
+  "workbench.experimental.share.enabled": true,
+  "security.promptForLocalFileProtocolHandling": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "markdown-preview-enhanced.imageUploader": "sm.ms",
+  "markdown-image.local.path": "/requirements/images",
+  "markdown-image.base.altFormat": "${prompt}",
+  "markdown-image.base.fileNameFormat": "${mdname}_${timestamp}",
+  "spellright.language": [],
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.hideOnboarding": true,
+  "workbench.sideBar.location": "right",
+  "workbench.iconTheme": "vscode-great-icons",
 }
